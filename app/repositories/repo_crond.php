@@ -27,7 +27,7 @@ class repo_crond
     public function get_list(array $conds)
     {
         $page_size  = !empty($conds['page_size']) ? $conds['page_size'] : $this->page_size;
-        $order_by   = !empty($conds['order_by']) ? $conds['order_by'] : ['create_time', 'desc']; //默认添加时间正序
+        $order_by   = !empty($conds['order_by']) ? $conds['order_by'] : []; //默认添加时间正序
         $group_by   = !empty($conds['group_by']) ? $conds['group_by'] : []; //分组
 
         $where = []; //筛选

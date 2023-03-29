@@ -24,7 +24,7 @@ Route::group(['middleware' => ['ip_filter']], function() {
 
     //目前改用jwt_auth
     Route::group(['middleware' => ['assign_guard:admin', 'jwt_auth:admin', 'safe_ips']], function() {
-        Route::get('/', 'ctl_index@index')->name('admin.index.index'); //首页
+        //Route::get('/', 'ctl_index@index')->name('admin.index.index'); //首页
         Route::post('logout', 'ctl_index@logout')->name('admin.index.logout'); //退出
         Route::get('userinfo', 'ctl_index@detail')->name('admin.index.detail'); //用户信息
         Route::post('edit_pwd', 'ctl_index@edit_pwd')->name('admin.index.edit_pwd'); //修改用户密码
