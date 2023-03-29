@@ -2,6 +2,16 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\mod_admin_user_login_log;
+use App\Models\mod_admin_user_oplog;
+use App\Models\mod_agent_login_log;
+use App\Models\mod_agent_oplog;
+use App\Models\mod_api_req_log;
+use App\Models\mod_member_active_data;
+use App\Models\mod_member_increase_data;
+use App\Models\mod_member_online_data;
+use App\Models\mod_member_retention_data;
+use App\Models\mod_user_login_log;
 use App\repositories\repo_admin_user;
 use App\repositories\repo_api_req_log;
 use App\repositories\repo_app_key;
@@ -81,6 +91,10 @@ class ctl_test extends Controller
 
     public function index(Request $request)
     {
+        //测试数据工厂
+        //mod_member_retention_data::factory()->create();
 
+        //手动清除 opcache
+        //opcache_reset();
     }
 }

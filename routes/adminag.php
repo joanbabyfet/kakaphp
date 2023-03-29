@@ -21,8 +21,8 @@ Route::get('reload_captcha', 'ctl_common@reload_captcha')->name('adminag.common.
 
 //目前改用jwt_auth
 Route::group(['middleware' => ['assign_guard:agent', 'jwt_auth:agent', 'safe_ips']], function() {
-    Route::get('/', 'ctl_index@index')->name('adminag.index.index'); //首页
-    Route::get('test', 'ctl_test@index')->name('adminag.test.index');
+    //Route::get('/', 'ctl_index@index')->name('adminag.index.index'); //首页
+    //Route::get('test', 'ctl_test@index')->name('adminag.test.index');
     Route::post('logout', 'ctl_index@logout')->name('adminag.index.logout'); //退出
     Route::get('userinfo', 'ctl_index@detail')->name('adminag.index.detail'); //用户信息
     Route::post('edit_pwd', 'ctl_index@edit_pwd')->name('adminag.index.edit_pwd'); //修改用户密码
@@ -33,14 +33,14 @@ Route::group(['middleware' => ['assign_guard:agent', 'jwt_auth:agent', 'safe_ips
 
     Route::group(['middleware' => ['permission:agent']], function (){
         Route::get('user', 'ctl_user@index')->name('adminag.user.index');
-        Route::get('user/detail', 'ctl_user@detail')->name('adminag.user.detail');
-        Route::post('user/add', 'ctl_user@add')->name('adminag.user.add');
+        //Route::get('user/detail', 'ctl_user@detail')->name('adminag.user.detail');
+        //Route::post('user/add', 'ctl_user@add')->name('adminag.user.add');
         Route::post('user/enable', 'ctl_user@enable')->name('adminag.user.enable');
         Route::post('user/disable', 'ctl_user@disable')->name('adminag.user.disable');
         Route::get('user/login_log', 'ctl_user@login_log')->name('adminag.user.login_log');
         Route::get('user_black_list', 'ctl_user@black_list')->name('adminag.user.black_list');
         Route::get('member_active_list', 'ctl_report@member_active_list')->name('adminag.report.member_active_list');
-        Route::get('member_active_list/export', 'ctl_report@export_member_active')->name('adminag.report.export_member_active');
+        //Route::get('member_active_list/export', 'ctl_report@export_member_active')->name('adminag.report.export_member_active');
         Route::get('member_retention_list', 'ctl_report@member_retention_list')->name('adminag.report.member_retention_list');
         Route::get('member_increase_list', 'ctl_report@member_increase_list')->name('adminag.report.member_increase_list');
         Route::get('member_online_list', 'ctl_report@member_online_list')->name('adminag.report.member_online_list');

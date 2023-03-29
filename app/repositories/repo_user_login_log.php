@@ -130,7 +130,7 @@ class repo_user_login_log
             {
                 $this->exception(trans('api.api_param_error'), -1);
             }
-            $this->delete(['_id' => $id]);
+            $this->delete(['id' => $id]);
         }
         catch (\Exception $e)
         {
