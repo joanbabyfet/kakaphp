@@ -47,6 +47,9 @@ password: Bb123456
 ## Change Log
 v1.0.0
 
+v1.0.2 - 2023-04-07
+* 优化发送telegram模块
+
 ## Maintainers
 Alan
 
